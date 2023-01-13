@@ -10,6 +10,8 @@ services:
     build: ./client
     ports:
       - "8080:3000"
+    environment:
+      - WDS_SOCKET_PORT=8080 # The mapped port on your host machine
     volumes:
       - ./client/src/:/app/src/
     command: npm run start
